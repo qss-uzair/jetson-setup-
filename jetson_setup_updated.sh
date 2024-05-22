@@ -105,13 +105,20 @@ https://jetsonhacks.com/2023/08/07/speech-ai-on-nvidia-jetson-tutorial/
 # Setup for LLM + TTS
 ## LLM
 ### download the image for nano LLM with proper CUDA and Torch Support
-
+docker pull dustynv/nano_llm:24.5.1-r36.2.0
 ### build the container
-
+sudo docker run --runtime nvidia -it --network=host --name sara_container --device /dev/snd 7ac10fc49133
 ### attach to the contaier
-
+docker attach sara_container
+### Download the exllamav2 file in your machine and copy it into Docker Conatiner
+1- https://github.com/turboderp/exllamav2/archive/refs/tags/v0.0.14.tar.gz # You can change the version (v0.0.14), but make sure that the Python version and the Cuda library are identical
+2- docker cp /home/username/Download/exllamav2file.tar.gz (conatinerid):/opt/LLM-Server
 ### To setup the LLM, build the wheel from the source file for 
-
+3- cd /opt/LLM-Server
+4- tar -xvf filename.tar.gz
+5- cd filename
+6- pip install .
+7- cd ..
 
 ## TTS
 
