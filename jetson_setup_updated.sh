@@ -134,6 +134,7 @@ git clone https://huggingface.co/LoneStriker/WestLake-7B-v2-4.0bpw-h6-exl2
 
 
 ## TTS
+SOURCE FOR THE WHEEL TO GET THE RIGHT VERSION OF TORCH: http://jetson.webredirect.org/jp6/cu122/torchaudio/2.3.0+952ea74
 
 
 
