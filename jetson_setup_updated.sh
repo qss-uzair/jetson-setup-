@@ -120,6 +120,19 @@ docker attach sara_container
 6- pip install .
 7- cd ..
 
+### Setup and run the LLM
+apt update
+apt-get install git-lfs
+git lfs install
+python3 -m pip install --upgrade pip
+pip3 install -r requirements.txt
+
+### Download the model
+mkdir models
+cd models
+git clone https://huggingface.co/LoneStriker/WestLake-7B-v2-4.0bpw-h6-exl2
+
+
 ## TTS
 
 
