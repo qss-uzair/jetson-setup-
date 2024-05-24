@@ -112,6 +112,7 @@ sudo docker run --runtime nvidia -it --network=host --name sara_container --devi
 docker attach sara_container
 ### Download the exllamav2 file in your machine and copy it into Docker Conatiner
 1- https://github.com/turboderp/exllamav2/archive/refs/tags/v0.0.14.tar.gz # You can change the version (v0.0.14), but make sure that the Python version and the Cuda library are identical
+### Source to get the prebuilt versions of ExLLamav2 https://github.com/turboderp/exllamav2/releases
 2- docker cp /home/username/Download/exllamav2file.tar.gz (conatinerid):/opt/LLM-Server
 ### To setup the LLM, build the wheel from the source file for 
 3- cd /opt/LLM-Server
