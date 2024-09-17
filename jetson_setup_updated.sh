@@ -95,6 +95,9 @@ sudo apt update
 sudo apt upgrade
 sudo reboot
 
+# setup the default store volumes for docker containers
+## source: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-docker.md
+
 # riva
 1. create ngc acct
 NEW-QSS-Key : ODlydTcxMzZmZmhzNWpnMWQzNG5iOXQxYjI6MGZkZGYxYWMtZjAzMC00MDM2LTgyYTktMDkzMTQ3NGE4Njcy
