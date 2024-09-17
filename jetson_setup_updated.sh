@@ -39,11 +39,11 @@ sudo systemctl disable nvargus-daemon.service
 
 # swap, place in HDD, swaps RAM with 'swap' when running out of memory
 sudo systemctl disable nvzramconfig
-sudo fallocate -l 16G /mnt/16GB.swap 
-sudo mkswap /mnt/16GB.swap 
-sudo swapon /mnt/16GB.swap 
+sudo fallocate -l 16G /mnt/ssd/16GB.swap 
+sudo mkswap /mnt/ssd/16GB.swap #will give error GPT it `sudo chmod 0600 /mnt/ssd/16GB.swap` -> ls -l `/mnt/ssd/16GB.swap` ->  `sudo swapon /mnt/ssd/16GB.swap`
+sudo swapon /mnt/ssd/16GB.swap 
 sudo nano /etc/fstab 
-/mnt/16GB.swap none swap sw 0 0 
+/mnt/ssd/16GB.swap none swap sw 0 0 
 sudo mount -a
 sudo swapoff -a
 sudo swapon -a
