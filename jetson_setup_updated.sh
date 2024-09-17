@@ -30,6 +30,7 @@ sudo apt-get install pip nano git-lfs
 
 # jetson-stats
 sudo pip install -U jetson-stats
+sudo systemctl restart jtop.service
 >>jtop
 
 # disable gui:
