@@ -52,7 +52,7 @@ swapon --show
 
 (swap should appear)
 
-# activate cpus: [done]
+# activate cpus: [!!NOT GOING ON MAX POWER AFTER REBOOT]
 (refrence : https://developer.ridgerun.com/wiki/index.php/NVIDIA_Jetson_Orin/JetPack_5.0.2/Performance_Tuning/Maximizing_Performance)
 sudo su
 echo 1 > /sys/devices/system/cpu/cpu4/online
