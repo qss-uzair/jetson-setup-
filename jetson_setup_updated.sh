@@ -1,4 +1,20 @@
 # create a single partition on the SSD
+# Adding FifeSystem to the SSD
+sudo mkfs.ext.4 /dev/nvme0n1
+# create a mount point
+sudo mkdir /mnt/nvme
+# mount the SSD
+sudo mount /dev/nvme0n1 /mnt/nvme
+
+## now ensure the SSD mounts on boot
+# get the UUID of the SSD
+sudo blkid
+# add the following line to /etc/fstab
+sudo nano /etc/fstab
+UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX /mnt/nvme ext4 defaults 0 0
+#test the fstab
+sudo mount -a
+
 # mount SSD
 ## DO IT THROUGH THE GUI for a linux system
 
@@ -105,37 +121,15 @@ https://jetsonhacks.com/2023/08/07/speech-ai-on-nvidia-jetson-tutorial/
 # Setup for LLM + TTS
 ## LLM
 ### download the image for nano LLM with proper CUDA and Torch Support
-docker pull dustynv/nano_llm:24.5.1-r36.2.0
+
 ### build the container
-sudo docker run --runtime nvidia -it --network=host --name sara_container --device /dev/snd 7ac10fc49133
+
 ### attach to the contaier
-docker attach sara_container
-### Download the exllamav2 file in your machine and copy it into Docker Conatiner
-1- https://github.com/turboderp/exllamav2/archive/refs/tags/v0.0.14.tar.gz # You can change the version (v0.0.14), but make sure that the Python version and the Cuda library are identical
-### Source to get the prebuilt versions of ExLLamav2 https://github.com/turboderp/exllamav2/releases
-2- docker cp /home/username/Download/exllamav2file.tar.gz (conatinerid):/opt/LLM-Server
+
 ### To setup the LLM, build the wheel from the source file for 
-3- cd /opt/LLM-Server
-4- tar -xvf filename.tar.gz
-5- cd filename
-6- pip install .
-7- cd ..
-
-### Setup and run the LLM
-apt update
-apt-get install git-lfs
-git lfs install
-python3 -m pip install --upgrade pip
-pip3 install -r requirements.txt
-
-### Download the model
-mkdir models
-cd models
-git clone https://huggingface.co/LoneStriker/WestLake-7B-v2-4.0bpw-h6-exl2
 
 
 ## TTS
-SOURCE FOR THE WHEEL TO GET THE RIGHT VERSION OF TORCH: http://jetson.webredirect.org/jp6/cu122/torchaudio/2.3.0+952ea74
 
 
 
