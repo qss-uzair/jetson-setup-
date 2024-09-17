@@ -95,7 +95,7 @@ sudo apt update
 sudo apt upgrade
 sudo reboot
 
-# setup the default store volumes for docker containers
+# setup the default store volumes for docker containers when working with RIVA and other containers
 ## source: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-docker.md
 
 # riva
@@ -114,7 +114,7 @@ ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.15.1
 cd riva_quickstart_arm64:2.15.1 # or the directory that is created
 nano config.sh # set false for services not in use, add more languages to the asr languages ex:"en-US ar-SA" 
 sudo bash riva_init.sh
-bash riva_start.sh 
+bash riva_start.sh # NOTE: !!! BEGIN HERE !!!
 
 Install RIVA Python Client:
 https://jetsonhacks.com/2023/08/07/speech-ai-on-nvidia-jetson-tutorial/
