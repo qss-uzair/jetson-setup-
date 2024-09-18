@@ -65,7 +65,18 @@ echo 1 > /sys/devices/system/cpu/cpu10/online
 echo 1 > /sys/devices/system/cpu/cpu11/online
 
 # Max power mode
+# check the current power mode
+$ sudo nvpmodel -q
+NV Power Mode: MODE_30W
+2
 
+# set it to mode 0 (typically the highest)
+$ sudo nvpmodel -m 0
+
+# reboot if necessary, and confirm the changes
+$ sudo nvpmodel -q
+NV Power Mode: MAXN
+0
 
 
 # max performance:
