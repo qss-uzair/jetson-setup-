@@ -96,7 +96,7 @@ sudo apt upgrade
 sudo reboot
 
 # setup the default store volumes for docker containers when working with RIVA and other containers
-## source: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-docker.md
+## source: https://github.com/dusty-nv/jetson-containers/blob/master/docs/setup.md
 
 # riva
 1. create ngc acct
